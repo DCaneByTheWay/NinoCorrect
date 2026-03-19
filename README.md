@@ -1,7 +1,10 @@
 # NinoCorrect
 The worst Autocorrect.
 
-## [Video Documentation](https://youtu.be/WkCuUmb7h-s)
+# [Try NinoCorrect](https://dcanebytheway.github.io/NinoCorrect/)
+
+### [Video Documentation](https://youtu.be/WkCuUmb7h-s)
+
 
 NinoCorrect takes correct text and purposefully replicates sporadic but humanized typos.
 
