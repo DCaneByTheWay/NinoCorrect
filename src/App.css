@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1025 0%, #2d1f3d 50%, #1a1025 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.App {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #e2d4f0;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #a89bb5;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background: rgba(45, 31, 61, 0.8);
+    border: 2px solid #4a3660;
+    border-radius: 12px;
+    color: #e2d4f0;
+    resize: vertical;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea::placeholder {
+    color: #7a6b8a;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #8b5cf6;
+}
+
+/* Intensity Toggle */
+.intensity-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.intensity-label {
+    color: #a89bb5;
+    font-size: 1rem;
+}
+
+.toggle-buttons {
+    display: flex;
+    position: relative;
+    background: rgba(45, 31, 61, 0.8);
+    border-radius: 8px;
+    padding: 4px;
+    border: 1px solid #4a3660;
+}
+
+.toggle-indicator {
+    position: absolute;
+    top: 4px;
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    border-radius: 6px;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.toggle-buttons button {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    color: #a89bb5;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.toggle-buttons button:hover {
+    color: #e2d4f0;
+    transform: none;
+    box-shadow: none;
+}
+
+.toggle-buttons button.active {
+    color: #fff;
+}
+
+/* Extreme button - secret unlockable */
+.toggle-buttons button.extreme {
+    animation: extremeAppear 0.5s ease-out;
+}
+
+.toggle-buttons button.extreme.active {
+    color: #fff;
+}
+
+@keyframes extremeAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Special indicator color for extreme mode */
+.toggle-buttons:has(button.extreme.active) .toggle-indicator {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* Main Convert Button */
+.convert-btn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    color: #fff;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.5);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+.output {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(45, 31, 61, 0.6);
+    border: 1px solid #4a3660;
+    border-radius: 12px;
+    text-align: left;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.output h3 {
+    color: #a78bfa;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.output p {
+    color: #d4c4e8;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
