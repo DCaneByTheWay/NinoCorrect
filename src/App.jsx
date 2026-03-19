@@ -113,6 +113,12 @@ function App() {
                     <p>{output}</p>
                 </div>
             )}
+
+            <footer className="footer">
+                <a href="https://github.com/DCaneByTheWay/NinoCorrect" target="_blank" rel="noopener noreferrer">
+                    View on GitHub
+                </a>
+            </footer>
         </div>
     );
 }
