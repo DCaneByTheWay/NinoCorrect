@@ -194,4 +194,6 @@ textarea:focus {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
 }
